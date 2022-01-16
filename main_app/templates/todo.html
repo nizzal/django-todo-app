@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>{{ title }}</title>
+{% endblock %}
+{% block new_todo %}
+<div class="form-container">
+	{% if previous_title %}
+	<span style="text-align: center; display: block">Previous Title: {{ previous_title }}<span><br />
+			<h1>{{ post_url }}</h1>
+			{% endif %}
+			<form method="POST">
+				{% csrf_token %}
+				{{ form }}
+				<!-- <label>Title:</label> -->
+				<!-- <input type="text" name="title" placeholder="Buy bread..." /> -->
+				<input type="submit" value="Submit" />
+			</form>
+</div>
+{% endblock %}

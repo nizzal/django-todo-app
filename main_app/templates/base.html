@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="{% static 'css/style.css'%}" />
+		{% block title %}{% endblock %}
+	</head>
+	<body>
+		<header>
+			<nav>
+				<h2><a href="{% url 'home_page' %}">Todo App</a></h2>
+				<a href="{% url 'create_todo' %}">Add Todo</a>
+			</nav>
+		</header>
+		<div class="container">
+			{% block home %} {% endblock %} {% block new_todo %} {% endblock %}
+			{% block edit_todo %} {% endblock %}{% block error %} {% endblock %}
+		</div>
+	</body>
+</html>

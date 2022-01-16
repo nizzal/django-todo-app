@@ -1,0 +1,13 @@
+{% extends 'base.html' %} {% block error %}
+<span
+	>{{ error_message }}, redirecting or
+	<a class="redirect_link" href="{{redirect_link}}">click here</a></span
+>
+<script>
+	let redirectLink = document.querySelector(".redirect_link");
+	function redirectUser() {
+		window.location.href = redirectLink.href;
+	}
+	setTimeout(redirectUser, 5000);
+</script>
+{% endblock %}

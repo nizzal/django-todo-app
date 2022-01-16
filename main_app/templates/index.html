@@ -1,0 +1,18 @@
+{% extends 'base.html' %} {% block title %}
+<title>Django Todo App</title>
+{% endblock %} {% block home %}
+<h1>Todo App with Django</h1>
+{% for todo in todos %}
+<div class="card">
+	<div class="left">
+		<h3>Title: {{ todo.title }}</h3>
+		<span>Finished: {{ todo.is_finished }}</span><br />
+		<span>Created at: {{ todo.created_at }}</span><br />
+		<span>Updated at: {{ todo.updated_at }}</span><br />
+	</div>
+	<div class="right">
+		<a href="{% url 'edit_todo' todo.id %}" class="edit-btn">Edit</a>
+		<a href="{% url 'delete_todo' todo.id %}" class="delete-btn">Delete</a>
+	</div>
+</div>
+{% endfor %} {% comment %} List other todos {% endcomment %} {% endblock %}
