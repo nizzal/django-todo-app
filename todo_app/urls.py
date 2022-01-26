@@ -19,9 +19,6 @@ from django.urls.conf import include
 from . import views
 
 urlpatterns = [
-    path("", include('main_app.urls')),
-    # path("", views.home_page, name="home_page"),
-    # path("create-todo/", views.create_todo, name="create_todo"),
-    # path("new-todo", views.new_todo, name="new_todo"),
-    path('admin/', admin.site.urls),
+    path("", include("main_app.urls")),
+    path("admin/", admin.site.urls),
 ]

@@ -133,6 +133,11 @@ input[type="submit"]:hover {
 	cursor: pointer;
 }
 
+.edited {
+	font-style: italic;
+	text-decoration: underline;
+}
+
 @media (max-width: 500px) {
 	.card {
 		flex-direction: column;

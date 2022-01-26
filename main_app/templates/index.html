@@ -5,7 +5,12 @@
 {% for todo in todos %}
 <div class="card">
 	<div class="left">
-		<h3>Title: {{ todo.title }}</h3>
+		<span>Id: {{ todo.id }}</span><br />
+		<h3>
+			Title: {{ todo.title }} {% if todo.is_edited %}<span class="edited"
+				>(Edited)</span
+			>{% endif %}
+		</h3>
 		<span>Finished: {{ todo.is_finished }}</span><br />
 		<span>Created at: {{ todo.created_at }}</span><br />
 		<span>Updated at: {{ todo.updated_at }}</span><br />
