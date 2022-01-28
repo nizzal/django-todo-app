@@ -1,3 +1,4 @@
+from turtle import title
 from django.forms.fields import DateTimeField
 from django.http import QueryDict
 from django.http.response import HttpResponse
@@ -6,12 +7,21 @@ from .models import Todo
 from .forms import TodoForm
 from datetime import date, datetime
 
-# Implement filter by date, alphabet asc and desc
-
 
 # Create your views here.
 def home_page(request):
-    todos = Todo.objects.all()
+    q = request.GET.get("q", "")
+    order_by_value = ""
+
+    if q == "desc":
+        order_by_value = "-title"
+    elif q == "date":
+        order_by_value = "created_at"
+    else:
+        order_by_value = "title"
+
+    # filtering todo objects based on query value
+    todos = Todo.objects.all().order_by(order_by_value)
     context = {"todos": todos}
     return render(request, "index.html", context)
 

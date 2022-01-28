@@ -157,3 +157,29 @@ input[type="submit"]:hover {
 		margin-right: 1rem;
 	}
 }
+
+.form-select__wrapper {
+	display: flex;
+	justify-content: flex-end;
+	margin: 0 1rem;
+	height: 30px;
+}
+
+.form-select__wrapper select {
+	background-color: #16a085;
+	color: #fff;
+	font-weight: bold;
+	border: none;
+	cursor: pointer;
+}
+
+.todolist-container {
+	margin: 0 auto;
+	max-width: 680px;
+	width: 100%;
+}
+
+option {
+	padding: 5px;
+	margin: 1rem;
+}
