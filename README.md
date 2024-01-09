@@ -13,7 +13,7 @@ Simple Django Todo App
 
 ```
 git clone https://github.com/nizzal/django-todo-app
-cd /django-todo-app
+cd django-todo-app
 pip install -r requirements.txt
 python manage.py runserver
 ```
